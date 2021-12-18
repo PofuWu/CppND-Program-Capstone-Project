@@ -91,7 +91,6 @@ void Game::checkTargetMatch(){
         for (auto target : targets){
           if(bullet.getTarget2D().x == target.getTarget2D().x && bullet.getTarget2D().y == target.getTarget2D().y){
             score++;
-            std::cout << score << std::endl;
             shootingPlane.bullets.erase(shootingPlane.bullets.begin() + countBullet);
             targets.erase(targets.begin() + countTarget);
             countBullet--;
