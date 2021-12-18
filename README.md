@@ -1,12 +1,18 @@
-# CPPND: Capstone Snake Game Example
+# CPPND: Capstone Project
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+## Overview: Shooting Game in C++ with SDL
+
+This is repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://github.com/udacity/CppND-Capstone-Snake-Game) repo and implemented into another game which is Shooting Game.
+
+The Shooting Game is implemented with SDL library. Once you enter the game window, you can use the keyboard to control the plane body and launch the bullet to get the scores. Also, the game will become harder if you get enough points from the targets. 
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+## File Structure
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+This repo contains:
+
+* 
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -23,24 +29,15 @@ In this project, you can build your own C++ application or extend this Snake gam
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
-## Basic Build Instructions
+## Basic Build and Run Instructions
 
-1. Clone this repo.
-2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./SnakeGame`.
+1. Clone this repo using `git clone https://github.com/PofuWu/CppND-Program-Capstone-Project`
+2. Enter the root directory using `cd CppND-Program-Capstone-Project`
+3. Make a build directory in the top level directory: `mkdir build && cd build`
+4. Compile: `cmake .. && make`
+5. Run it: `./ShootingGame`.
+
+  
+## Rubric
 
 
-## CC Attribution-ShareAlike 4.0 International
-
-
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
-
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
