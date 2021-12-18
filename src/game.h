@@ -5,7 +5,8 @@
 #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
-#include "snake.h"
+#include "shootingPlane.h"
+#include "targetObj.h"
 
 class Game {
  public:
@@ -16,8 +17,10 @@ class Game {
   int GetSize() const;
 
  private:
-  Snake snake;
+  ShootingPlane shootingPlane;
   SDL_Point food;
+  std::vector<TargetObj> targets;
+  
 
   std::random_device dev;
   std::mt19937 engine;
@@ -25,9 +28,15 @@ class Game {
   std::uniform_int_distribution<int> random_h;
 
   int score{0};
+  int phaseThres{5};
+  float phaseSpeed{0};
 
-  void PlaceFood();
   void Update();
+  void setPhaseSpeed();
+  void checkTargetMatch();
+  void spawnTarget();
+  void checkTargetBottom();
+  bool checkPlaneAlive();
 };
 
 #endif

@@ -1,1 +1,5 @@
 .github/**
+build/
+.gitignore
+.vscode/
+SnakeFlow.drawio

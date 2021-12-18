@@ -3,7 +3,8 @@
 
 #include <vector>
 #include "SDL.h"
-#include "snake.h"
+#include "shootingPlane.h"
+#include "targetObj.h"
 
 class Renderer {
  public:
@@ -11,7 +12,8 @@ class Renderer {
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  void Render(Snake const snake, SDL_Point const &food);
+  //void Render(ShootingPlane const &shootingPlane, SDL_Point const &food);
+  void Render(ShootingPlane const &shootingPlane, std::vector<TargetObj> const targets);
   void UpdateWindowTitle(int score, int fps);
 
  private:

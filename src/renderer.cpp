@@ -16,7 +16,7 @@ Renderer::Renderer(const std::size_t screen_width,
   }
 
   // Create Window
-  sdl_window = SDL_CreateWindow("Snake Game", SDL_WINDOWPOS_CENTERED,
+  sdl_window = SDL_CreateWindow("ShootingPlane Game", SDL_WINDOWPOS_CENTERED,
                                 SDL_WINDOWPOS_CENTERED, screen_width,
                                 screen_height, SDL_WINDOW_SHOWN);
 
@@ -38,7 +38,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, SDL_Point const &food) {
+void Renderer::Render(ShootingPlane const &shootingPlane, std::vector<TargetObj> const targets) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -49,22 +49,35 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-  block.x = food.x * block.w;
-  block.y = food.y * block.h;
-  SDL_RenderFillRect(sdl_renderer, &block);
+  if (!targets.empty()){
+    for (auto target : targets){
+      block.x = target.getTarget2D().x * block.w;
+      block.y = target.getTarget2D().y * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+    }
+  }
+  // Render Bullet
+  SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xFF, 0x00, 0xFF);
+  if (!shootingPlane.bullets.empty()){
+    for (auto bullet : shootingPlane.bullets){
+      block.x = bullet.getTarget2D().x * block.w;
+      block.y = bullet.getTarget2D().y * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+    }
+  }
 
-  // Render snake's body
+  // Render shootingPlane's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-  for (SDL_Point const &point : snake.body) {
+  for (SDL_Point const &point : shootingPlane.body) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
-  // Render snake's head
-  block.x = static_cast<int>(snake.head_x) * block.w;
-  block.y = static_cast<int>(snake.head_y) * block.h;
-  if (snake.alive) {
+  // Render shootingPlane's head
+  block.x = static_cast<int>(shootingPlane.headX) * block.w;
+  block.y = static_cast<int>(shootingPlane.headY) * block.h;
+  if (shootingPlane.alive) {
     SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
@@ -76,6 +89,6 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 }
 
 void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+  std::string title{"ShootingPlane Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
