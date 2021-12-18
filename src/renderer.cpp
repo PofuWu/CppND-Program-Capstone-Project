@@ -89,6 +89,6 @@ void Renderer::Render(ShootingPlane const &shootingPlane, std::vector<TargetObj>
 }
 
 void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"ShootingPlane Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+  std::string title{"Shooting Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
