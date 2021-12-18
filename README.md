@@ -12,7 +12,15 @@ The Shooting Game is implemented with SDL library. Once you enter the game windo
 
 This repo contains:
 
-* 
+* `include/`: Contains the header files `controller.h`, `game.h`, `renderer.h`, `shootingPlane.h`, `targetObj.h`.
+  * `controller.h`: The class `Controller` handles the keyboard input and transfer the direction information.
+  * `game.h`: The class `Game` runs the shooting game and updates `ShootingPlane`, `TargetObj` and `Renderer` information.
+  * `renderer.h`: The class `Renderer` illustrates the grid with specific color.
+  * `shootingPlane.h`: The class `ShootingPlane` updates position of the plane.
+  * `targetObj.h`: The class `TargetObj` initializes the grid object with specific position and speed which will be used into `Game` and `ShootingPlane`.
+* `src/`: Contains the Source files `controller.cpp`, `game.cpp`, `renderer.cpp`, `shootingPlane.cpp`, `targetObj.cpp`.
+* `CMakeLists.txt`: cmake configuration file.
+* `README.md`: Description of this project (This file).
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
