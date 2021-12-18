@@ -47,5 +47,24 @@ This repo contains:
 
   
 ## Rubric
-
+* README
+  * A README with instructions is included with the project.
+  * The README indicates which project is chosen.
+  * The README includes information about each rubric point addressed.
+* Compiling and Testing
+  * The submission must compile and run.
+* Loops, Functions, I/O
+  * The project demonstrates an understanding of C++ functions and control structures.
+  * The project accepts user input and processes the input.
+* Object Oriented Programming
+  * The project uses Object Oriented Programming techniques.
+  * Classes use appropriate access specifiers for class members.
+  * Class constructors utilize member initialization lists.
+  * Classes abstract implementation details from their interfaces.
+  * Classes encapsulate behavior.
+* Memory Management
+  * The project makes use of references in function declarations.
+  * The project uses destructors appropriately.
+* Concurrency
+  * None
 
