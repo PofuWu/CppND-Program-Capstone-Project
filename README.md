@@ -6,7 +6,7 @@ This is repo for the Capstone project in the [Udacity C++ Nanodegree Program](ht
 
 The Shooting Game is implemented with SDL library. Once you enter the game window, you can use the keyboard to control the plane body and launch the bullet to get the scores. Also, the game will become harder if you get enough points from the targets. 
 
-<img src="snake_game.gif"/>
+<img src="ShootingGame.gif"/>
 
 ## File Structure
 
