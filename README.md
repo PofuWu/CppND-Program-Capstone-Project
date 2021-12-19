@@ -4,7 +4,7 @@
 
 This is repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://github.com/udacity/CppND-Capstone-Snake-Game) repo and implemented into another game which is Shooting Game.
 
-The Shooting Game is implemented with SDL library. Once you enter the game window, you can use the keyboard to control the plane body and launch the bullet to get the scores. Also, the game will become harder if you get enough points from the targets. 
+The Shooting Game is implemented with SDL library. Once you enter the game window, the target will be spawned randomly and approach to the bottom gradually. You can use the keyboard to control the plane body and launch the bullet to get the scores. Press `Arrow keys` to activate  `left` and `right` action to the plane body and then press the `spacebar` (or `space`/`space key`) to launch the bullet to shoot the target. Bullet will be rendered as  `green` and the target will be `yellow`. If the target hits the plane head which is illustrated as `blue` one, game will be over and plane head will change to `red` as terminated state. Also, the game will become harder if you get enough points from the targets. 
 
 <img src="ShootingGame.gif"/>
 
